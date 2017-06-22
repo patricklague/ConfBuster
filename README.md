@@ -84,9 +84,9 @@ Identify rotational isomers of a molecule.
 # Tutorial
 The can follow this tutorial by using the molecule 1w96.pdb available in the directory "example".
 The initial structure is:
-&nbsp;
+
 ![minipic](http://132.203.89.236/ConfBuster/macro-1w96-1.png)
-&nbsp;
+
 **Step 1**
 Perform a single point optimisation on macro-1w96.pdb:
  ```sh
@@ -108,15 +108,15 @@ $ pymol Follow-macro-1w96.py
   run Follow-macro-1w96.py
   ```
  The result should looks like:
-&nbsp;
+
 ![minipic](http://132.203.89.236/ConfBuster/conformational-range-3.png)
-&nbsp;
+
 Lowest energy conformation is in green (conf-16.mol2 in the matrix below). PDB structure is in cyan. RMSD between conf-16.mol2 and PDB structure is of 0.405 over all atoms. All sampled conformations are in black thin lines to show the conformational range of the macrocycle.
  
 Using the ConfBuster-Analysis.py module allows to compare the n best results with a reference or the initial structure. Results will be shown as a 2d RMSD matrix of n conformations. On the right, an energy bar (from green to purple) between the best and worst energy is displayed.
-&nbsp;
+
 ![minipic](http://132.203.89.236/ConfBuster/Heatmap_20.png)
-&nbsp;
+
 **Other examples are provided in the directory "Examples"**
 
 # How to cite ConfBuster
