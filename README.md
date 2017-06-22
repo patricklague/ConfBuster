@@ -11,7 +11,7 @@
 - Pymol (≥ 1.8) (https://sourceforge.net/projects/pymol)
 - OpenBabel (≥ **2.4.1**) (http://openbabel.org/wiki/Main_Page)
 The version of OpenBabel should **imperatively be 2.4.1**.
-Link to download it: https://sourceforge.net/projects/openbabel/files/
+Link to download: https://sourceforge.net/projects/openbabel/files/
 For a clean and functional installation:
  ```{sh}
 In openbabel-2.4.1 directory:
@@ -20,7 +20,7 @@ $ cd build
 $ cmake ../ -DCMAKE_INSTALL_PREFIX=/path/to/where/you/want
 $ make -j4
 $ make install
-(This is essential for OpenBabel to work)
+(This is essential for OpenBabel to work properly)
 ```
 **OPTIONAL (VISUALIZATION)**
 - R package ComplexHeatmap (≥ 3.5) (from bioconductor.org)
