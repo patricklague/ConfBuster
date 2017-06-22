@@ -36,7 +36,7 @@ OPTIONAL (VISUALIZATION)
 
 The most simple way to install ConfBuster is by downloading the official release in the GitHub section “release”. Alternatively, one may clone the ConfBuster repository using git :
 
-$ git clone https://github.com/lague_patrick/ConfBuster.git
+$ git clone https://github.com/patricklague/ConfBuster.git
 
 At your choice, put the scripts in a directory present in your $PATH OR add the directory where the scripts are to your $PATH:
 

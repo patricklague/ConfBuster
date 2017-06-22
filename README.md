@@ -39,7 +39,7 @@ install.packages("circlize")
 # Installation
 The most simple way to install ConfBuster is by downloading the official release in the GitHub section "release". Alternatively, one may clone the ConfBuster repository using git :
  ```sh
-$ git clone https://github.com/lague_patrick/ConfBuster.git
+$ git clone https://github.com/patricklague/ConfBuster.git
   ```
 At your choice, put the scripts in a directory present in your $PATH OR add the directory where the scripts are to your $PATH:
    ```sh
@@ -82,7 +82,7 @@ Identify rotational isomers of a molecule.
  -e adjust e_midpoint variable
   ```
 # Tutorial
-The can follow this tutorial by using the molecule 1w96.pdb available in the directory "example".
+The user can follow this tutorial by using the molecule 1w96.pdb available in the directory "examples/1w96".
 The initial structure is:
 
 ![minipic](http://132.203.89.236/ConfBuster/macro-1w96-1.png)
