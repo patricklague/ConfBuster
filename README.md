@@ -104,7 +104,7 @@ $ cd macro-1w96
 $ pymol Follow-macro-1w96.py
   ```
  or alternatively, directly in Pymol:
-   ```python
+   ```sh
   run Follow-macro-1w96.py
   ```
  The result should looks like:
