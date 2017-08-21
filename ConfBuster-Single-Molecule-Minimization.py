@@ -43,7 +43,7 @@ def main(argv):
         print "%s %s" %(opt, arg)
         if opt == '-h':
             print 
-            print 'ConfBuster-Single-Molecule-Minimization.py -i inputfile [mandatory] -o output name prefix [auto: replaces initial file]'
+            print 'ConfBuster-Single-Molecule-Minimization.py -i inputfile [mandatory] -o output name prefix [default: replaces input file]'
             sys.exit()
         elif opt in ("-i"):
             in_name = arg
@@ -55,7 +55,7 @@ def main(argv):
         elif opt in ("-s"):
             steps = int(arg)
     if mandatory != '1':
-        print 'ConfBuster-Single-Molecule-Minimization.py -i inputfile [mandatory] -o output name prefix [auto: replaces initial file]'
+        print 'ConfBuster-Single-Molecule-Minimization.py -i inputfile [mandatory] -o output name prefix [default: replaces input file]'
         sys.exit()
 
     BABELKEYWORD    = " -c 1e-8 -sd -n %s "%(steps)
