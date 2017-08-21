@@ -71,13 +71,13 @@ def main(argv):
     try:
         opts, args = getopt.getopt(argv,"hi:e:r:n:Z:R:")
     except getopt.GetoptError:
-        print ' -i input filename in mol2 [mandatory] -r rmsd cut off -n number of conformations to include in analysis [default: all] -e id-point value for the scale [default: calculate from values in file]' 
+        print ' -i input filename in mol2 [mandatory] -r rmsd cut off -n number of conformations to include in analysis [default: all] -e id-point value for the scale [default: 0]' 
         sys.exit(2)
 
     for opt, arg in opts:
         print "%s %s" %(opt, arg)
         if opt == '-h':
-            print ' -i input filename in mol2 [mandatory] -r rmsd cut off -n number of conformations to include in analysis [default: all] -e id-point value for the scale [default: calculate from values in file]' 
+            print ' -i input filename in mol2 [mandatory] -r rmsd cut off -n number of conformations to include in analysis [default: all] -e id-point value for the scale [default: 0]' 
             sys.exit()
         elif opt in ("-i"):
             DIRECTORY = arg
@@ -89,7 +89,7 @@ def main(argv):
         elif opt in ("-n"):
             RANGE = int(arg)
     if mandatory != '1':
-        print ' -i input filename in mol2 [mandatory] -r rmsd cut off -n number of conformations to include in analysis [default: all] -e mid-point value for the scale [default: calculate from values in file]' 
+        print ' -i input filename in mol2 [mandatory] -r rmsd cut off -n number of conformations to include in analysis [default: all] -e mid-point value for the scale [default: 0]' 
         sys.exit()
 
 
