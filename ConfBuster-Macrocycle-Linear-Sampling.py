@@ -54,13 +54,13 @@ def main(argv):
     try:
         opts, args = getopt.getopt(argv,"hi:T:r:g:b:o:s:n:N:")
     except getopt.GetoptError:
-        print 'ConfBuster-Macrocycle-Linear-Sampling.py -i inputfile [mandatory] -r rms deviation cutoff [0.5] -n for each cliving point, number of rotamer searches performed [5] -N for each cliving point, number of conformations extracted from each rotamer search [5] -o output directory name' 
+        print 'ConfBuster-Macrocycle-Linear-Sampling.py -i input filename [mandatory] -r rms deviation cutoff [0.5] -n for each cleaving point, number of rotamer searches performed [5] -N for each cleaving point, number of conformations extracted from each rotamer search [5] -o output directory name [mandatory]' 
         sys.exit(2)
 
     for opt, arg in opts:
         print "%s %s" %(opt, arg)
         if opt == '-h':
-            print 'ConfBuster-Macrocycle-Linear-Sampling.py -i inputfile [mandatory] -r rms deviation cutoff [0.5] -n for each cliving point, number of rotamer searches performed [5] -N for each cliving point, number of conformations extracted from each rotamer search [5] -o output directory name' 
+            print 'ConfBuster-Macrocycle-Linear-Sampling.py -i input filename [mandatory] -r rms deviation cutoff [0.5] -n for each cleaving point, number of rotamer searches performed [5] -N for each cleaving point, number of conformations extracted from each rotamer search [5] -o output directory name [mandatory]' 
             sys.exit()
         elif opt in ("-i"):
             in_name = arg
@@ -93,7 +93,7 @@ def main(argv):
                 sys.exit('-x values are 0 or 1')
                 
     if mandatory != '1':
-        print 'ConfBuster-Macrocycle-Linear-Sampling.py -i inputfile [mandatory] -r rms deviation cutoff [0.5] -n for each cliving point, number of rotamer searches performed [5] -N for each cliving point, number of conformations extracted from each rotamer search [5] -o output directory name' 
+        print 'ConfBuster-Macrocycle-Linear-Sampling.py -i input filename [mandatory] -r rms deviation cutoff [0.5] -n for each cleaving point, number of rotamer searches performed [5] -N for each cleaving point, number of conformations extracted from each rotamer search [5] -o output directory name [mandatory]' 
         sys.exit()
 
     # setting the number of threads
