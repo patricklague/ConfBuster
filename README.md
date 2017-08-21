@@ -6,12 +6,12 @@
 # Dependencies
 **CORE**
 - Python 2.7 (https://www.python.org)
-- R (≥ 3.0.0) (https://cran.r-project.org/index.html)
 - NetworkX (tested with 1.11) (https://networkx.github.io)
 - Pymol (≥ 1.8) (https://sourceforge.net/projects/pymol)
 - OpenBabel (≥ **2.4.1**) (http://openbabel.org/wiki/Main_Page)
 The version of OpenBabel should **imperatively be 2.4.1**.
 Link to download: https://sourceforge.net/projects/openbabel/files/
+
 For a clean and functional installation:
  ```{sh}
 In openbabel-2.4.1 directory:
@@ -22,8 +22,9 @@ $ make -j4
 $ make install
 (This is essential for OpenBabel to work properly)
 ```
-**OPTIONAL (VISUALIZATION)**
-- R package ComplexHeatmap (≥ 3.5) (from bioconductor.org)
+**OPTIONAL (VISUALISATION)**
+- R (≥ 3.0.0) (https://cran.r-project.org/index.html)
+- R package ComplexHeatmap (≥ 1.14) (from Bioconductor release 3.5 (bioconductor.org))
 
 **R shell**
  ```{r}
@@ -45,44 +46,45 @@ At your choice, put the scripts in a directory present in your $PATH OR add the 
    ```sh
  export PATH=$PATH:/full-path-here/ConfBuster/
    ```
- PyMOL and OpenBabel should also be recognized in your $PATH. If you want to install them locally, you should change the headers of the ConfBuster scripts to add their correct respective paths.
+ PyMOL and OpenBabel should also be included in your $PATH. If you want to install them locally, you should change the headers of the ConfBuster scripts to add their correct absolute paths.
  
 # ConfBuster tools
 - **ConfBuster-Single-Molecule-Minimization**
-Perform a simple minimization of the given molecule (recommended before all analysis).
+Performs a simple minimization of the given molecule (recommended before).
  ```sh
- -i inputfile [mandatory]
- -o output name prefix [auto: replaces initial file]
-  ```
-
-  - **ConfBuster-Macrocycle-Linear-Sampling**
- Find the conformation of a cyclic molecule.
-  ```sh
--i inputfile [mandatory]
--r rms deviation cutoff [0.5]
--n for each cliving point, number of rotamer searches performed [5] 
--N for each cliving point, number of molecules extracted from each rotamer search [5] 
--o output directory name
-```
+ -i input filename [mandatory]
+ -o output name prefix [default: replace input file]
+ ```
 - **ConfBuster-Rotamer-Search**
 Identify rotational isomers of a molecule.
  ```sh
--i inputfile in mol2 [mandatory] 
--g # of generations [100] 
--e accepted delta E in kcal/mol [50] 
--d output directory [automatic]
--f format of outputted molecules [xyz,mol2(default)]
+-i input filename in mol2 [mandatory] 
+-g number of generations [default: 100] 
+-e the energy cutoff used to discriminate conformations in units of kcal/mol [default: 50]
+-d output directory name [default: use the prefix of the input filename] 
+-f format of outputted molecules [xyz or default: mol2]
  ```
- - **ConfBuster-Analysis**
- Perform post-analyses to visualize a clustering based on RMSD values between the conformations.
+- **ConfBuster-Macrocycle-Linear-Sampling**
+Performs a conformational search of a cyclic molecule.
+ ```sh
+-i input filename [mandatory]
+-r rmsd cutoff in Angstrom [default: 0.5]
+-n for each cleaving point, number of rotamer searches performed [default: 5] 
+-N for each cleaving point, number of molecules extracted from each rotamer search [default: 5] 
+-o output directory name [default: prefix of the input filename]
+```
+
+- **ConfBuster-Analysis**
+Perform post-analyses to visualize a clustering based on RMSD values between the conformations.
  ```sh 
- -i inputfile in mol2 [mandatory] 
- -r rmsd cut off 
- -n use n conformation
- -e adjust e_midpoint variable
+ -i input filename in mol2 [mandatory] 
+ -r rmsd cut off [default: none]
+ -n number of conformations to include in the analysis [default: all]
+ -e mid-point value of the energy color scale [default: 0]
   ```
 # Tutorial
-The user can follow this tutorial by using the molecule 1w96.pdb available in the directory "examples/1w96".
+
+Several examples including all the command lines and required files to run macrocyle conformational searches are included with the distribution, in the **examples** folder and in the **examples/Instructions.pdf** file.The user can follow this tutorial by using the molecule 1w96.pdb available in the directory **examples/1w96**.
 The initial structure is:
 
 ![minipic](http://132.203.89.236/ConfBuster/macro-1w96-1.png)
@@ -111,16 +113,16 @@ $ pymol Follow-macro-1w96.py
 
 ![minipic](http://132.203.89.236/ConfBuster/conformational-range-3.png)
 
-Lowest energy conformation is in green (conf-16.mol2 in the matrix below). PDB structure is in cyan. RMSD between conf-16.mol2 and PDB structure is of 0.405 over all atoms. All sampled conformations are in black thin lines to show the conformational range of the macrocycle.
+Lowest energy conformation is in green (conf-16.mol2 in the matrix below). PDB structure is in cyan. RMSD between conf-16.mol2 and PDB structure is of 0.405 Angstrom over all atoms. All sampled conformations are in black thin lines to show the conformational range of the macrocycle.
  
-Using the ConfBuster-Analysis.py module allows to compare the n best results with a reference or the initial structure. Results will be shown as a 2d RMSD matrix of n conformations. On the right, an energy bar (from green to purple) between the best and worst energy is displayed.
+Using the ConfBuster-Analysis.py module ($ ConfBuster-Analysis.py -i macro-1w96 -R macro-1w96.mol2 -n 20) allows to compare the n best results with a reference or the initial structure. Results will be shown as a 2d RMSD matrix of n conformations. On the right, an energy bar (from green to purple) between the best and worst energy is displayed.
 
 ![minipic](http://132.203.89.236/ConfBuster/Heatmap_20.png)
 
 **Other examples are provided in the directory "Examples"**
 
 # How to cite ConfBuster
-A publication describing ConfBuster is submitted. This section will be updated as soon as possible. However, if using ConfBuster, we recommend to cite the present GitHub page.
+A manuscript describing ConfBuster is under review. This section will be updated as soon as possible. However, if using ConfBuster, we recommend to cite the present GitHub page.
 # License
 >ConfBuster Suite
 >Copyright (C) 2017  Xavier Barbeau, Antony T. Vincent and Patrick Lagüe
