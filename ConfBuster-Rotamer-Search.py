@@ -41,13 +41,13 @@ def main(argv):
     try:
         opts, args = getopt.getopt(argv,"hi:T:g:e:o:f:F:G:")
     except getopt.GetoptError:
-        print 'ConfBuster-Rotamer-Search.py -i input filename in mol2 [mandatory] -g # of generations [100] -e accepted delta E in kcal/mol [50] -d output directory [default: use the prefix of the input filename] -f format of outputted molecules [xyz,mol2(default)]'
+        print 'ConfBuster-Rotamer-Search.py -i input filename in mol2 [mandatory] -g # of generations [100] -e energy cutoff to discriminate conformations in kcal/mol [default: 50] -d output directory [default: use the prefix of the input filename] -f format of outputted molecules [xyz,mol2(default)]'
         sys.exit(2)
 
     for opt, arg in opts:
         print "%s %s" %(opt, arg)
         if opt == '-h':
-            print 'ConfBuster-Rotamer-Search.py -i input filename in mol2 [mandatory] -g # of generations [100] -e accepted delta E in kcal/mol [50] -d output directory [default: use the prefix of the input filename] -f format of outputted molecules [xyz,mol2(default)]'
+            print 'ConfBuster-Rotamer-Search.py -i input filename in mol2 [mandatory] -g # of generations [100] -e energy cutoff to discriminate conformations in kcal/mol [default: 50] -d output directory [default: use the prefix of the input filename] -f format of outputted molecules [xyz,mol2(default)]'
             sys.exit()
         elif opt in ("-i"):
             molecule = arg
@@ -69,7 +69,7 @@ def main(argv):
                 mandatory = 0
                 print 'Accepted format of output molecules is mol2 or xyz'
     if mandatory != '1':
-        print 'ConfBuster-Rotamer-Search.py -i input filename in mol2 [mandatory] -g # of generations [100] -e accepted delta E in kcal/mol [50] -d output directory [default: use the prefix of the input filename] -f format of outputted molecules [xyz,mol2(default)]'
+        print 'ConfBuster-Rotamer-Search.py -i input filename in mol2 [mandatory] -g # of generations [100] -e energy cutoff to discriminate conformations in kcal/mol [default: 50] -d output directory [default: use the prefix of the input filename] -f format of outputted molecules [xyz,mol2(default)]'
         sys.exit()
 
     
