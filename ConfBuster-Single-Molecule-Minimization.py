@@ -36,14 +36,14 @@ def main(argv):
     try:
         opts, args = getopt.getopt(argv,"hi:T:o:F:s:")
     except getopt.GetoptError:
-        print 'ConfBuster-Single-Molecule-Minimization.py -i inputfile [mandatory] -T # of threads [2] -o output name prefix [default: replace input file]'
+        print 'ConfBuster-Single-Molecule-Minimization.py -i inputfile [mandatory] -T # of threads [default: 2] -o output name prefix [default: replace input file]'
         sys.exit(2)
 
     for opt, arg in opts:
         print "%s %s" %(opt, arg)
         if opt == '-h':
             print 
-            print 'ConfBuster-Single-Molecule-Minimization.py -i inputfile [mandatory] -o output name prefix [default: replace input file]'
+            print 'ConfBuster-Single-Molecule-Minimization.py -i inputfile [mandatory] -T # of threads [default: 2] -o output name prefix [default: replace input file]'
             sys.exit()
         elif opt in ("-i"):
             in_name = arg
@@ -55,7 +55,7 @@ def main(argv):
         elif opt in ("-s"):
             steps = int(arg)
     if mandatory != '1':
-        print 'ConfBuster-Single-Molecule-Minimization.py -i inputfile [mandatory] -o output name prefix [default: replace input file]'
+        print 'ConfBuster-Single-Molecule-Minimization.py -i inputfile [mandatory] -T # of threads [default: 2] -o output name prefix [default: replace input file]'
         sys.exit()
 
     BABELKEYWORD    = " -c 1e-8 -sd -n %s "%(steps)
