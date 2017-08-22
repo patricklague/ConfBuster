@@ -77,7 +77,7 @@ Performs a conformational search of a cyclic molecule.
 - **ConfBuster-Analysis**
 Perform post-analyses to visualize a clustering based on RMSD values between the conformations.
  ```sh 
- -i input filename in mol2 [mandatory] 
+ -i directory name of the search results [mandatory] 
  -r rmsd cut off [default: none]
  -n number of conformations to include in the analysis [default: all]
  -e mid-point value of the energy color scale [default: 0]
@@ -115,7 +115,7 @@ $ pymol Follow-macro-1w96.py
 
 Lowest energy conformation is in green (conf-16.mol2 in the matrix below). PDB structure is in cyan. RMSD between conf-16.mol2 and PDB structure is of 0.405 Angstrom over all atoms. All sampled conformations are in black thin lines to show the conformational range of the macrocycle.
  
-Using the ConfBuster-Analysis.py module ($ ConfBuster-Analysis.py -i macro-1w96 -R macro-1w96.mol2 -n 20) allows to compare the n best results with a reference or the initial structure. Results will be shown as a 2d RMSD matrix of n conformations. On the right, an energy bar (from green to purple) between the best and worst energy is displayed.
+Using the ConfBuster-Analysis.py module ($ ConfBuster-Analysis.py -i macro-1w96 -n 20) allows to compare the n best results with a reference or the initial structure. Results will be shown as a 2d RMSD matrix of n conformations. On the right, an energy bar (from green to purple) between the best and worst energy is displayed.
 
 ![minipic](http://132.203.89.236/ConfBuster/Heatmap_20.png)
 
