@@ -8,8 +8,8 @@
 - Python 2.7 (https://www.python.org)
 - NetworkX (tested with 1.11) (https://networkx.github.io)
 - Pymol (≥ 1.8) (https://sourceforge.net/projects/pymol)
-- OpenBabel (≥ **2.4.1**) (http://openbabel.org/wiki/Main_Page)
-The version of OpenBabel should **imperatively be 2.4.1**.
+- Open Babel (≥ **2.4.1**) (http://openbabel.org/wiki/Main_Page)
+The version of Open Babel should **imperatively be 2.4.1**.
 Link to download: https://sourceforge.net/projects/openbabel/files/
 
 For a clean and functional installation:
@@ -20,7 +20,7 @@ $ cd build
 $ cmake ../ -DCMAKE_INSTALL_PREFIX=/path/to/where/you/want
 $ make -j4
 $ make install
-(This is essential for OpenBabel to work properly)
+(This is essential for Open Babel to work properly)
 ```
 **OPTIONAL (VISUALISATION)**
 - R (≥ 3.0.0) (https://cran.r-project.org/index.html)
@@ -46,7 +46,7 @@ At your choice, put the scripts in a directory present in your $PATH OR add the 
    ```sh
  export PATH=$PATH:/full-path-here/ConfBuster/
    ```
- PyMOL and OpenBabel should also be included in your $PATH. If you want to install them locally, you should change the headers of the ConfBuster scripts to add their correct absolute paths.
+ PyMOL and Open Babel should also be included in your $PATH. If you want to install them locally, you should change the headers of the ConfBuster scripts to add their correct absolute paths.
  
 # ConfBuster tools
 - **ConfBuster-Single-Molecule-Minimization**
