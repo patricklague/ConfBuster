@@ -10,7 +10,7 @@
 - Pymol (≥ 1.8) (https://sourceforge.net/projects/pymol)
 - Open Babel (≥ **2.4.1**) (http://openbabel.org/wiki/Main_Page)
 The version of Open Babel should **imperatively be 2.4.1**.
-As indicated in the Open Babel instruction, Eigen version 2 is requiered to use properly Open Babel (https://openbabel.org/docs/dev/Installation/install.html).
+As indicated in the instruction, Eigen version 2 is requiered to use properly Open Babel (https://openbabel.org/docs/dev/Installation/install.html).
 Link to download: https://sourceforge.net/projects/openbabel/files/
 
 For a clean and functional installation:
