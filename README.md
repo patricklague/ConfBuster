@@ -10,6 +10,7 @@
 - Pymol (≥ 1.8) (https://sourceforge.net/projects/pymol)
 - Open Babel (≥ **2.4.1**) (http://openbabel.org/wiki/Main_Page)
 The version of Open Babel should **imperatively be 2.4.1**.
+As indicated in the Open Babel instruction, Eigen version 2 is requiered to use properly Open Babel (https://openbabel.org/docs/dev/Installation/install.html).
 Link to download: https://sourceforge.net/projects/openbabel/files/
 
 For a clean and functional installation:
@@ -122,7 +123,7 @@ Using the ConfBuster-Analysis.py module ($ ConfBuster-Analysis.py -i macro-1w96 
 **Other examples are provided in the directory "Examples"**
 
 # How to cite ConfBuster
-A manuscript describing ConfBuster is under review. This section will be updated as soon as possible. However, if using ConfBuster, we recommend to cite the present GitHub page.
+Barbeau, X., Vincent, A.T. & Lagüe, P., (2018). ConfBuster: Open-Source Tools for Macrocycle Conformational Search and Analysis. Journal of Open Research Software. 6(1), p.1. DOI: http://doi.org/10.5334/jors.189
 # License
 >ConfBuster Suite
 >Copyright (C) 2017  Xavier Barbeau, Antony T. Vincent and Patrick Lagüe
