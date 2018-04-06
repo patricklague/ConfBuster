@@ -625,7 +625,7 @@ cmd.set('stick_radius','0.1')
                         if isH == 0:
                             cycle_check = 0
                             for x in cycle_list:
-                                if len(x) <= 10:
+                                if len(x) <= 7:
                                     if aa1 in x and aa2 in x:
                                         cycle_check += 1
                             if cycle_check == 0:
@@ -1273,7 +1273,7 @@ while get_mol < %s:
 
     for rm in ['tmp*','Pymol-RMS.py','ref.prop','used-macro-start.txt','ref.xyz']:
         try:
-            os.system("rm -r %s"%(rm))
+            os.system("rm -rf %s"%(rm))
         except:
             null = 0
     print '== ConfBuster Version 1.0'
