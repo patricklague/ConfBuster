@@ -344,7 +344,7 @@ library(circlize)
 
 dataset <- read.table("rmsd_matrix_%s.dat", row.names = 1, header = TRUE, check.names = FALSE)
 dend = hclust(dist(dataset))
-conf_order <- labels(dend)
+conf_order <- unlist(dend["order"])
 dataset2<- dataset[conf_order,conf_order]
 
 ncol  = ncol(dataset)
