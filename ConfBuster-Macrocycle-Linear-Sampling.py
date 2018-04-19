@@ -54,13 +54,13 @@ def main(argv):
     try:
         opts, args = getopt.getopt(argv,"hi:T:r:g:b:o:s:n:N:")
     except getopt.GetoptError:
-        print 'ConfBuster-Macrocycle-Linear-Sampling.py -i input filename [mandatory] -r rms deviation cutoff [0.5] -n for each cleaving point, number of rotamer searches performed [5] -N for each cleaving point, number of conformations extracted from each rotamer search [5] -o output directory name [mandatory]' 
+        print 'ConfBuster-Macrocycle-Linear-Sampling.py -i inputfile [mandatory] -r rms deviation cutoff [0.5] -n for each cliving point, number of rotamer searches performed [5] -N for each cliving point, number of conformations extracted from each rotamer search [5] -o output directory name' 
         sys.exit(2)
 
     for opt, arg in opts:
         print "%s %s" %(opt, arg)
         if opt == '-h':
-            print 'ConfBuster-Macrocycle-Linear-Sampling.py -i input filename [mandatory] -r rms deviation cutoff [0.5] -n for each cleaving point, number of rotamer searches performed [5] -N for each cleaving point, number of conformations extracted from each rotamer search [5] -o output directory name [mandatory]' 
+            print 'ConfBuster-Macrocycle-Linear-Sampling.py -i inputfile [mandatory] -r rms deviation cutoff [0.5] -n for each cliving point, number of rotamer searches performed [5] -N for each cliving point, number of conformations extracted from each rotamer search [5] -o output directory name' 
             sys.exit()
         elif opt in ("-i"):
             in_name = arg
@@ -93,7 +93,7 @@ def main(argv):
                 sys.exit('-x values are 0 or 1')
                 
     if mandatory != '1':
-        print 'ConfBuster-Macrocycle-Linear-Sampling.py -i input filename [mandatory] -r rms deviation cutoff [0.5] -n for each cleaving point, number of rotamer searches performed [5] -N for each cleaving point, number of conformations extracted from each rotamer search [5] -o output directory name [mandatory]' 
+        print 'ConfBuster-Macrocycle-Linear-Sampling.py -i inputfile [mandatory] -r rms deviation cutoff [0.5] -n for each cliving point, number of rotamer searches performed [5] -N for each cliving point, number of conformations extracted from each rotamer search [5] -o output directory name' 
         sys.exit()
 
     # setting the number of threads
@@ -325,6 +325,7 @@ cmd.set('stick_radius','0.1')
             for y in x:
                 small_cycle_list.append(y)
     
+
 
     #
     #   exclude list
@@ -628,14 +629,14 @@ cmd.set('stick_radius','0.1')
                                 if len(x) <= 7:
                                     if aa1 in x and aa2 in x:
                                         cycle_check += 1
-                            if cycle_check == 0:
+                            if cycle_check <= 1:
                                 r_bond_l.append([a[0],a[1]])
     
     
                 print
                 print
                 print
-    
+
                 angles_l = []
     
                 for x in r_bond_l:
@@ -763,7 +764,7 @@ cmd.set('stick_radius','0.1')
                 #print ter_dh_w_h
 
 
-                # for debuging 
+                ##for debuging 
     
                 #print 'r bonds'
                 #for x in r_bond_l:
